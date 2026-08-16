@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "specials_season": {
+    "number": 0,
+    "title": "0. Supplemental Episodes",
+    "plot": "Anime-original episodes and other material intentionally included alongside One Pace.",
+    "folder_aliases": [
+      "Season 00 - Supplemental Episodes",
+      "Season 00",
+      "Season 0",
+      "Specials",
+      "Supplemental Episodes"
+    ]
+  },
+  "arcs": [
+    {
+      "id": "g8",
+      "title": "G-8",
+      "aliases": ["G8", "G 8", "G-8 Arc"],
+      "source_type": "original_anime",
+      "placement": {
+        "after_season": 16
+      },
+      "episodes": [
+        {"source_episode": 196, "arc_episode": 1},
+        {"source_episode": 197, "arc_episode": 2},
+        {"source_episode": 198, "arc_episode": 3},
+        {"source_episode": 199, "arc_episode": 4},
+        {"source_episode": 200, "arc_episode": 5},
+        {"source_episode": 201, "arc_episode": 6},
+        {"source_episode": 202, "arc_episode": 7},
+        {"source_episode": 203, "arc_episode": 8},
+        {"source_episode": 204, "arc_episode": 9},
+        {"source_episode": 205, "arc_episode": 10},
+        {"source_episode": 206, "arc_episode": 11}
+      ]
+    }
+  ]
+}
