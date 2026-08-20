@@ -71,6 +71,29 @@ class ExistingOnePaceCompatibilityTests(SetupTestCase):
             setup.one_pace_nfo_name(filename, 16), "S16E25_alternate.nfo"
         )
 
+    def test_long_ring_long_land_episode_zero_uses_season_17_metadata(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = self.make_root(temp_dir)
+            arc = self.make_arc(
+                root,
+                "[One Pace][304-321] Long Ring Long Land [1080p]",
+            )
+            video = self.make_video(
+                arc,
+                "[One Pace][303] Long Ring Long Land 00 "
+                "[1080p][En Dub][9DF1490C].mp4",
+            )
+
+            report, _ = self.run_process(root)
+
+            destination = video.with_suffix(".nfo")
+            self.assertTrue(destination.is_file())
+            self.assertFalse(report.unmatched)
+            episode = ET.parse(str(destination)).getroot()
+            self.assertEqual(episode.findtext("season"), "17")
+            self.assertEqual(episode.findtext("episode"), "0")
+            self.assertEqual(episode.findtext("title"), "Long Ring Long Land 00")
+
     def test_run_without_supplemental_folder_preserves_one_pace_workflow(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             root = self.make_root(temp_dir)
